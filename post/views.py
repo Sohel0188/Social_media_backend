@@ -18,3 +18,10 @@ class commentsViewset(viewsets.ModelViewSet):
 class reactionViewset(viewsets.ModelViewSet):
     queryset = models.reactionModel.objects.all()
     serializer_class = serializer.reactionSerializer
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        post_id = self.request.query_params.get('post')
+        if post_id:
+            queryset = queryset.filter(post=post_id)
+        return queryset

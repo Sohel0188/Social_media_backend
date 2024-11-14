@@ -4,3 +4,5 @@ from . import models
 
 admin.site.register(models.CreatePost)
 admin.site.register(models.storyModel)
+admin.site.register(models.reactionModel)
+admin.site.register(models.commentModel)

@@ -24,4 +24,4 @@ class RequestModel(models.Model):
     
     def __str__(self) -> str:
         return f"{self.requested_user.username}{self.requested_status}"
-        
+         
