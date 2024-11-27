@@ -42,7 +42,7 @@ class userRegistrationView(APIView):
             email = EmailMultiAlternatives(email_subject,' ',to=[user.email])
             email.attach_alternative(email_body, "text/html")
             email.send()
-            return Response("check Your mail for confirmation")
+            return Response("Check Your mail for confirmation")
             # return Response({'uid': uid, 'token': token}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
@@ -76,7 +76,7 @@ class UserLoginApiView(APIView):
                 user_account, create = models.UserAccount.objects.get_or_create(user=user)
                 login (request,user)
                 print(user_account.id)
-                return Response({'token' : token.key, 'user_id': user_account.id})
+                return Response({'token' : token.key, 'user_id': user_account.id,'redirect_url': 'http://127.0.0.1:5500/'})
                 
             else:
                 return Response({'error' : "Invalid Credential"})

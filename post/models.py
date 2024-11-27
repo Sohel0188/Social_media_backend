@@ -28,8 +28,8 @@ class commentModel(models.Model):
 
 CHOOSE_OPTION = [
     ( "👍", "👍"),
-    ("😢", "😢",),
-    ( "😆", "😆",), 
+    ("😥", "😥",),
+    ( "😂", "😂",), 
 ]
 
 class reactionModel(models.Model):
